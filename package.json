@@ -36,6 +36,7 @@
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "sass": "^1.79.1",
-    "typescript": "^5.4.9"
+    "typescript": "^5.4.9",
+    "typescript-plugin-css-modules": "^5.1.0"
   }
 }
