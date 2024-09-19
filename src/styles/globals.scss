@@ -1,4 +1,5 @@
 @forward '~normalize.css';
+@use '@/styles/palette.module.scss' as palette;
 
 html,
 body {
@@ -39,4 +40,11 @@ strong {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: palette.$evening-sea;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }

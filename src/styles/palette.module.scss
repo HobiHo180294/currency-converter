@@ -1,5 +1,13 @@
-$primary-color: #64ff00;
+$deep-teal: #003135;
+$evening-sea: #024950;
+$el-salva: #964734;
+$blue-chill: #0fa4af;
+$powder-blue: #afdde5;
 
 :export {
-  primaryColor: $primary-color;
+  deepTeal: $deep-teal;
+  eveningSea: $evening-sea;
+  elSalva: $el-salva;
+  blueChill: $blue-chill;
+  powderBlue: $powder-blue;
 }
