@@ -27,7 +27,21 @@
   },
   "rules": {
     "import/prefer-default-export": "off",
-    "react/function-component-definition": [0]
+    "react/function-component-definition": [0],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-nested-ternary": "off",
+    "react/jsx-props-no-spreading": [
+      2,
+      {
+        "html": "ignore"
+      }
+    ],
+    "react/no-unstable-nested-components": [
+      "warn",
+      {
+        "allowAsProps": true
+      }
+    ]
   },
   "ignorePatterns": ["next.config.mjs", "node_modules/**/*"]
 }
