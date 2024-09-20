@@ -1,0 +1,13 @@
+@use '@/styles/palette.module' as palette;
+
+.form {
+  padding: 4rem 3rem 5rem;
+  border: 0.1rem solid palette.$secondary-color;
+  border-radius: 1rem;
+  background-color: palette.$white;
+
+  &__title {
+    margin: 0 0 4.5rem 0;
+    color: palette.$text-primary;
+  }
+}

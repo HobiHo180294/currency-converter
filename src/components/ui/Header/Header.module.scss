@@ -3,7 +3,9 @@
 .header {
   display: flex;
   justify-content: center;
+  gap: 3rem;
   width: 100%;
   padding: 4.5rem 1rem;
-  background-color: palette.$blue-chill;
+  background-color: palette.$secondary-color;
+  color: palette.$primary-color;
 }

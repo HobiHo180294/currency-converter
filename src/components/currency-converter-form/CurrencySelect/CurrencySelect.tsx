@@ -1,20 +1,22 @@
+'use client';
+
 import { currencies } from '@/lib/data/currency.data';
-import { Currency } from '@/shared/types/globals';
-import Image from 'next/image';
+import {
+  Currency,
+  CurrencyConverterFormFieldsConfig,
+} from '@/shared/types/globals';
 import { useMemo } from 'react';
+import { useFormContext } from 'react-hook-form';
+import { AdvancedImage } from '../../ui/AdvancedImage/AdvancedImage';
 import { CurrencySelectProps } from './CurrencySelect.interface';
 import styles from './CurrencySelect.module.scss';
 
 export const CurrencySelect = ({
   name,
-  register,
   value,
-  excludeCurrency,
+  disabled,
 }: CurrencySelectProps): React.JSX.Element => {
-  const availableCurrencies = useMemo<Currency[]>(
-    () => currencies.filter(({ code }) => code !== excludeCurrency),
-    [excludeCurrency]
-  );
+  const { register } = useFormContext<CurrencyConverterFormFieldsConfig>();
 
   const selectedCurrency = useMemo<Currency | undefined>(
     () => currencies.find(({ code }) => code === value),
@@ -23,11 +25,8 @@ export const CurrencySelect = ({
 
   return (
     <div className={styles['currency-select']}>
-      <div>
-        <label htmlFor={name}>{name === 'fromCurrency' ? 'From' : 'To'}</label>
-      </div>
       <div className={styles['money-group']}>
-        <Image
+        <AdvancedImage
           src={`https://flagcdn.com/${selectedCurrency?.flag}.svg`}
           alt={`${selectedCurrency?.flag}`}
           width="40"
@@ -35,11 +34,13 @@ export const CurrencySelect = ({
         />
         <select
           id={name}
+          className={styles['money-group__select']}
           {...register(name, {
             required: true,
+            disabled,
           })}
         >
-          {availableCurrencies.map(({ code }) => (
+          {currencies.map(({ code }) => (
             <option key={code} value={code}>
               {code}
             </option>

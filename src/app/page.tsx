@@ -1,4 +1,4 @@
-import { CurrencyConverterForm } from '@/components/CurrencyConverterForm/CurrencyConverterForm';
+import { CurrencyConverterForm } from '@/components/ui';
 import styles from '@/styles/pages/home.module.scss';
 
 export default function Home(): React.JSX.Element {
