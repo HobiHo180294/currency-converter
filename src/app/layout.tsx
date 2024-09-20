@@ -1,6 +1,6 @@
-import { Header } from '@/components/ui/Header/Header';
-import { CurrencyProvider, ReactQueryProvider } from '@/providers';
-import { LayoutProps } from '@/shared/types/globals';
+import { ReactQueryProvider } from '@/components/providers';
+import { Header } from '@/components/ui';
+import { Children } from '@/shared/types/globals';
 import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
@@ -19,16 +19,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: LayoutProps): React.JSX.Element {
+}: Readonly<Children>): React.JSX.Element {
   return (
     <html lang="en">
       <body className={roboto.className}>
         <div id="root">
           <ReactQueryProvider>
-            <CurrencyProvider>
-              <Header />
-              <main id="main">{children}</main>
-            </CurrencyProvider>
+            <Header />
+            <main id="main">{children}</main>
           </ReactQueryProvider>
         </div>
       </body>

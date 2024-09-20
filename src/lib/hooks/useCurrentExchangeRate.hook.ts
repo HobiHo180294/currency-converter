@@ -1,16 +1,19 @@
 'use client';
 
-import { CurrencyConverterFormFieldsConfig } from '@/components/CurrencyConverterForm/CurrencyConverterForm.interface';
+import { CurrencyPair } from '@/shared/types/globals';
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
-import { getCurrentExchangeRate } from '../actions';
+import { getCurrentExchangeRate } from '../actions/exchangeRate.actions';
 
 export const useCurrentExchangeRate = ({
-  amount,
-  fromCurrency,
-  toCurrency,
-}: CurrencyConverterFormFieldsConfig): UseQueryResult<string, Error> =>
+  baseCurrency,
+  targetCurrency,
+}: CurrencyPair): UseQueryResult<number, Error> =>
   useQuery({
-    queryKey: ['current-exchange-rate', amount, fromCurrency, toCurrency],
-    queryFn: () => getCurrentExchangeRate({ amount, fromCurrency, toCurrency }),
-    enabled: !!amount && !!fromCurrency && !!toCurrency,
+    queryKey: ['current-exchange-rate', baseCurrency, targetCurrency],
+    queryFn: () =>
+      getCurrentExchangeRate({
+        baseCurrency,
+        targetCurrency,
+      }),
+    enabled: !!baseCurrency && !!targetCurrency,
   });

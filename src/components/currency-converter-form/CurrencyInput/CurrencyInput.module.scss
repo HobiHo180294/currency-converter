@@ -1,0 +1,27 @@
+@use '@/styles/palette.module' as palette;
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid palette.$text-primary;
+  border-radius: 0.4rem;
+  color: palette.$text-primary;
+
+  &::placeholder {
+    color: palette.$text-primary;
+  }
+
+  &:disabled {
+    background-color: palette.$disabled-color;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline-color: palette.$interaction-color;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}

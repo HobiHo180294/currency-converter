@@ -1,0 +1,14 @@
+@use '@/styles/palette.module' as palette;
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+  border: none;
+  gap: 1rem;
+}
+
+.error {
+  color: palette.$error-color;
+}

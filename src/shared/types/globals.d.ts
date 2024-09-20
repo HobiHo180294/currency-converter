@@ -1,25 +1,28 @@
 import { ReactNode } from 'react';
 
-type CurrencyCode = 'USD' | 'EUR' | 'UAH';
-
-export type Nullable<T> = T | null;
-
-export interface Currency {
-  code: CurrencyCode;
-  flag: string;
+export interface WithID {
+  id: string;
 }
 
 export interface Children {
   children: ReactNode;
 }
 
-export interface LayoutProps<
-  ParamsConfig extends Record<string, unknown> | undefined = undefined,
-> extends Children {
-  params?: ParamsConfig;
+export interface Currency {
+  code: 'USD' | 'EUR' | 'UAH';
+  flag: string;
 }
 
-export interface CountryOption extends Flag {
-  value: Currency;
-  label: string;
+export interface CurrencyPair {
+  baseCurrency: Currency['code'];
+  targetCurrency: Currency['code'];
+}
+
+export interface CurrencyConverterFormFieldsConfig extends CurrencyPair {
+  baseAmount: number;
+  targetAmount: number;
+}
+
+export interface CurrencyConverterFormFieldName {
+  name: keyof CurrencyConverterFormFieldsConfig;
 }

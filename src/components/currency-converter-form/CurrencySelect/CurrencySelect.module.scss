@@ -1,0 +1,24 @@
+@use '@/styles/palette.module' as palette;
+
+.currency-select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.money-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &__select {
+    &:disabled {
+      background-color: palette.$disabled-color;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline-color: palette.$interaction-color;
+    }
+  }
+}

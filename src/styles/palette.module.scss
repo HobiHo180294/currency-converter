@@ -1,13 +1,19 @@
-$deep-teal: #003135;
-$evening-sea: #024950;
-$el-salva: #964734;
-$blue-chill: #0fa4af;
-$powder-blue: #afdde5;
+$primary-color: #eaffee;
+$secondary-color: #265932;
+$text-primary: #455323;
+$interaction-color: #7fb98a;
+$error-color: #d64045;
+$disabled-color: #d3d3d3;
+$white: #fff;
+$additional-primary: rgba(0, 0, 0, 0.1);
 
 :export {
-  deepTeal: $deep-teal;
-  eveningSea: $evening-sea;
-  elSalva: $el-salva;
-  blueChill: $blue-chill;
-  powderBlue: $powder-blue;
+  primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
+  textPrimary: $text-primary;
+  interactionColor: $interaction-color;
+  errorColor: $error-color;
+  disabledColor: $disabled-color;
+  white: $white;
+  additionalPrimary: $additional-primary;
 }
