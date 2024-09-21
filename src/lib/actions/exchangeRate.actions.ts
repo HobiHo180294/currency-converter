@@ -1,7 +1,7 @@
 'use server';
 
+import { ExchangeRateResponse } from '@/shared/types/api';
 import { CurrencyPair } from '@/shared/types/globals';
-import { ExchangeRateResponse } from '@/shared/types/server';
 
 export async function getCurrentExchangeRate({
   baseCurrency,
