@@ -8,7 +8,7 @@ export const CurrencyConverterFormProvider = ({
   children,
 }: Children): React.JSX.Element => {
   const methods = useForm({
-    mode: 'all',
+    mode: 'onBlur',
     defaultValues: {
       baseCurrency: 'USD',
       targetCurrency: 'UAH',

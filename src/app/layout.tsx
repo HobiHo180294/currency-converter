@@ -1,6 +1,6 @@
 import { ReactQueryProvider } from '@/components/providers';
 import { Header } from '@/components/ui';
-import { Children } from '@/shared/types/globals';
+import { LayoutProps } from '@/shared/types/globals';
 import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<Children>): React.JSX.Element {
+}: LayoutProps): React.JSX.Element {
   return (
     <html lang="en">
       <body className={roboto.className}>

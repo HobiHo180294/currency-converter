@@ -15,6 +15,7 @@ export const CurrencySelect = ({
   name,
   value,
   disabled,
+  describedBy,
 }: CurrencySelectProps): React.JSX.Element => {
   const { register } = useFormContext<CurrencyConverterFormFieldsConfig>();
 
@@ -34,6 +35,8 @@ export const CurrencySelect = ({
         />
         <select
           id={name}
+          aria-disabled={disabled}
+          aria-describedby={describedBy}
           className={styles['money-group__select']}
           {...register(name, {
             required: true,

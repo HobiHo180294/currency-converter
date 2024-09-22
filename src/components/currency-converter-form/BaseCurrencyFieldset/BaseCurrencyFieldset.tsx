@@ -1,9 +1,10 @@
 'use client';
 
+import { BASE_AMOUNT_CURRENCY_ERROR_ID } from '@/lib/constants/form.constants';
 import { useCurrencyFieldset } from '@/lib/hooks';
+import { disableCurrencyFormField } from '@/lib/utils/form.utils';
 import {
   calculateRateToTargetCurrency,
-  disableCurrencyFormField,
   ensureAppRunning,
 } from '@/lib/utils/global.utils';
 import { CurrencyConverterFormFieldsConfig } from '@/shared/types/globals';
@@ -51,15 +52,17 @@ export const BaseCurrencyFieldset = (): React.JSX.Element => {
         name="baseAmount"
         onChange={handleBaseAmountInputChange}
         disabled={disableCurrencyFormField(isLoading, isFetching)}
+        describedBy={BASE_AMOUNT_CURRENCY_ERROR_ID}
       />
 
       <CurrencySelect
         name="baseCurrency"
         value={baseCurrency}
         disabled={disableCurrencyFormField(isLoading, isFetching)}
+        describedBy={BASE_AMOUNT_CURRENCY_ERROR_ID}
       />
 
-      <CurrencyError name="baseAmount" />
+      <CurrencyError id={BASE_AMOUNT_CURRENCY_ERROR_ID} name="baseAmount" />
     </fieldset>
   );
 };

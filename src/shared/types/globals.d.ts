@@ -1,4 +1,6 @@
-import { ReactNode } from 'react';
+import { AriaAttributes, ReactNode } from 'react';
+
+type CurrencyCode = 'USD' | 'EUR' | 'UAH';
 
 export interface WithID {
   id: string;
@@ -8,8 +10,18 @@ export interface Children {
   children: ReactNode;
 }
 
+export interface LayoutProps<
+  ParamsConfig extends Record<string, unknown> | undefined = undefined,
+> extends Children {
+  params?: ParamsConfig;
+}
+
+export interface Aria {
+  describedBy: AriaAttributes['aria-describedby'];
+}
+
 export interface Currency {
-  code: 'USD' | 'EUR' | 'UAH';
+  code: CurrencyCode;
   flag: string;
 }
 
